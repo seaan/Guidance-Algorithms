@@ -14,14 +14,20 @@
 #ifndef PATHFINDER_H
 #define PATHFINDER_H
 
+typedef struct Coordinate{
+    float degrees, minutes, seconds, decimal;
+} Coordinate;
+
 typedef struct Path{
-    float current_lat, current_long;
-    float target_lat, target_long;
+    Coordinate current_lat, current_long;
+    Coordinate target_lat, target_long;
     float lat_vec, long_vec;
-    double degrees;
+    double angle;
 } Path;
 
 int Pathfinder(Path *path);
+void coord_dmsToDec(Coordinate *c1);
+void path_dmsToDec(Path *p1);
 
 
 #endif /* PATHFINDER_H */
