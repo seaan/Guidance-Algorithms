@@ -10,22 +10,19 @@
 #define PI 3.14159265359
 
 int Pathfinder(Path *path){
-    /*float magnitude;
+    float magnitude;
     float lat_uvec, long_uvec;
-     */
+    
     path_dmsToDec(path);
     
     /* First find the vector between our coordinates */
     path->lat_vec = path->target_lat.decimal - path->current_lat.decimal;
     path->long_vec = path->target_long.decimal - path->current_long.decimal;
     
-    /* Find the unit vector *//*
+    /* Find the unit vector */
     magnitude = sqrt(path->lat_vec*path->lat_vec + path->long_vec*path->long_vec);
-    lat_uvec = path->lat_vec/magnitude;
-    long_uvec = path->long_vec/magnitude;
-      */
-    
-    path->angle = atan((path->long_vec)/(path->lat_vec)) * (180/PI);
+    path->lat_uvec = path->lat_vec/magnitude;
+    path->long_uvec = path->long_vec/magnitude;
 }
 
 void coord_dmsToDec(Coordinate *c1){

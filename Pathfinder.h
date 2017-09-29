@@ -22,6 +22,7 @@ typedef struct Path{
     Coordinate current_lat, current_long;
     Coordinate target_lat, target_long;
     float lat_vec, long_vec;
+    float lat_uvec, long_uvec;
     double angle;
 } Path;
 
