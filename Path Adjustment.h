@@ -5,20 +5,17 @@
  */
 
 /* 
- * File:   Pathfinder.h
+ * File:   Path Adjustment.h
  * Author: Sean Widmier
  *
- * Created on September 29, 2017, 10:31 AM
+ * Created on October 1, 2017, 5:44 PM
  */
 
-#ifndef PATHFINDER_H
-#define PATHFINDER_H
+#ifndef PATH_ADJUSTMENT_H
+#define PATH_ADJUSTMENT_H
 #include "Paths.h"
 
-int Pathfinder(Path *path);
-void coord_dmsToDec(Coordinate *c1);
-void path_dmsToDec(Path *p1);
+void adjustPath(Path path_optimal, Path path_current, PathAdjustment *adjustment);
 
-
-#endif /* PATHFINDER_H */
+#endif /* PATH_ADJUSTMENT_H */
 

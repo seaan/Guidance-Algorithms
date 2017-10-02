@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Path\ Adjustment.o \
 	${OBJECTDIR}/Pathfinder.o \
 	${OBJECTDIR}/main.o
 
@@ -62,6 +63,12 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/guidance-algorithms.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/guidance-algorithms ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+.NO_PARALLEL:${OBJECTDIR}/Path\ Adjustment.o
+${OBJECTDIR}/Path\ Adjustment.o: Path\ Adjustment.c 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Path\ Adjustment.o Path\ Adjustment.c
 
 ${OBJECTDIR}/Pathfinder.o: Pathfinder.c 
 	${MKDIR} -p ${OBJECTDIR}
